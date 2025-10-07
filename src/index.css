@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 30% 5%;
+    --foreground: 150 100% 85%;
+
+    --card: 220 25% 8%;
+    --card-foreground: 150 100% 85%;
+
+    --popover: 220 25% 8%;
+    --popover-foreground: 150 100% 85%;
+
+    --primary: 150 100% 50%;
+    --primary-foreground: 220 30% 5%;
+
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 220 30% 5%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 150 50% 60%;
+
+    --accent: 280 80% 60%;
+    --accent-foreground: 150 100% 85%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 150 100% 85%;
+
+    --border: 150 50% 30%;
+    --input: 220 20% 15%;
+    --ring: 150 100% 50%;
+
+    --radius: 0.75rem;
+    
+    --neon-green: 150 100% 50%;
+    --neon-cyan: 190 100% 50%;
+    --neon-purple: 280 80% 60%;
+    --cyber-dark: 220 30% 5%;
+    --cyber-darker: 220 35% 3%;
+    
+    --glow-green: 0 0 20px hsl(150 100% 50% / 0.5);
+    --glow-cyan: 0 0 20px hsl(190 100% 50% / 0.5);
+    --glow-purple: 0 0 20px hsl(280 80% 60% / 0.5);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 30% 5%;
+    --foreground: 150 100% 85%;
+
+    --card: 220 25% 8%;
+    --card-foreground: 150 100% 85%;
+
+    --popover: 220 25% 8%;
+    --popover-foreground: 150 100% 85%;
+
+    --primary: 150 100% 50%;
+    --primary-foreground: 220 30% 5%;
+
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 220 30% 5%;
+
+    --muted: 220 20% 15%;
+    --muted-foreground: 150 50% 60%;
+
+    --accent: 280 80% 60%;
+    --accent-foreground: 150 100% 85%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 150 100% 85%;
+
+    --border: 150 50% 30%;
+    --input: 220 20% 15%;
+    --ring: 150 100% 50%;
+  }
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 20px hsl(150 100% 50% / 0.5), 0 0 40px hsl(150 100% 50% / 0.3);
+  }
+  
+  .glow-cyan {
+    box-shadow: 0 0 20px hsl(190 100% 50% / 0.5), 0 0 40px hsl(190 100% 50% / 0.3);
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 20px hsl(280 80% 60% / 0.5), 0 0 40px hsl(280 80% 60% / 0.3);
+  }
+  
+  .text-glow-green {
+    text-shadow: 0 0 10px hsl(150 100% 50% / 0.8), 0 0 20px hsl(150 100% 50% / 0.5);
+  }
+  
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsl(190 100% 50% / 0.8), 0 0 20px hsl(190 100% 50% / 0.5);
+  }
+  
+  .glass-cyber {
+    background: rgba(10, 14, 39, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(150 50% 30% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-rajdhani;
+    background-color: hsl(220 30% 5%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron;
+  }
+  
+  code, pre {
+    @apply font-mono;
+  }
+}
+
+@keyframes matrix-fall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
